@@ -10,7 +10,7 @@ object Environment {
   val idamURL = "https://idam-web-public.aat.platform.hmcts.net/login"
   val baseURL = "https://bar-web-aat.service.core-compute-aat.internal"
 
-  val minThinkTime = 5
+  val minThinkTime = 6
   val maxThinkTime = 10
   val constantthinkTime = 1
   val minWaitForNextIteration = 1
