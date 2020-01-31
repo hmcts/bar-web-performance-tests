@@ -16,6 +16,17 @@ object Environment {
   val minWaitForNextIteration = 1
   val maxWaitForNextIteration = 2
 
+  val SFCminThinkTime = 5
+  val SFCmaxThinkTime = 12
+  val SFCconstantthinkTime = 1
+  val SFCminWaitForNextIteration = 1
+  val SFCmaxWaitForNextIteration = 2
+
+  val DMminThinkTime = 5
+  val DMmaxThinkTime = 12
+  val DMconstantthinkTime = 1
+  val DMminWaitForNextIteration = 1
+  val DMmaxWaitForNextIteration = 2
 
   val HttpProtocol = http
 

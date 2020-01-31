@@ -16,7 +16,10 @@ object LandingBARLoginPage {
   val IdAMURL = Environment.idamURL
 
   val FeesClerkUserData = csv("BAR_FeeClerkUserData.csv").circular
+  val SrFeesClerkUserData = csv("BAR_SeniorFeeClerkUserData.csv").circular
   val FeesClerkUserDataIDs = csv("BAR_FeeClerkUserIDs.csv").circular
+  val DMUserData = csv("BAR_DMUserData.csv").circular
+  val SFeesClerkUserDataIDs = csv("BAR_SFeeClerkUserIDs.csv").circular
   val BashURL = Environment.baseURL
 
 
@@ -30,5 +33,8 @@ object LandingBARLoginPage {
      .check(css("input[name='_csrf']", "value").saveAs("csrftoken")))
    .pause(MinThinkTime seconds, MaxThinkTime seconds)
    .feed(FeesClerkUserData)
+   .feed(SrFeesClerkUserData)
    .feed(FeesClerkUserDataIDs)
+   .feed(DMUserData)
+   .feed(SFeesClerkUserDataIDs)
 }

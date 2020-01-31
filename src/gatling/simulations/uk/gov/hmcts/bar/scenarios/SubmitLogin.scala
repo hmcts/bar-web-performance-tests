@@ -143,7 +143,7 @@ object SubmitLogin {
 
     .exec(http("BAR_002_002_DM_SubmitLogin")
       .get("/api/monitoring-tools")
-      .headers(CreateSubHeader)
+       .headers(CreateSubHeader)
       .resources(http("BAR_002_003_DM_SubmitLogin")
         .get("/api/payment-types")
         .headers(CreateSubHeader),
@@ -157,7 +157,7 @@ object SubmitLogin {
           .get("/api/payment-instructions/count?status=TTB&startDate=" + StartDate + "&endDate=" + EndDate + "")
           .headers(CreateSubHeader),
         http("BAR_002_007_DM_SubmitLogin")
-          .get("/api/users/${ParamLoggedInUserID}/payment-instructions?status=PA")
+          .get("/api/users/6401f3a7-2407-493c-a651-bec635cd6ee6/payment-instructions?status=PA")
           .headers(CreateSubHeader),
         http("BAR_002_008_DM_SubmitLogin")
           .get("/api/sites?my-sites=true")
