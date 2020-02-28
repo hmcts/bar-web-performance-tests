@@ -31,38 +31,7 @@ class BARPTSimulation extends Simulation {
     )
 
 
-  val SFCSCN = scenario("Senior FEE Clerk User Journey")
-
-    .exec(
-      BARLogout.Logout,
-      LandingBARLoginPage.barLoginPage,
-      SubmitLogin.loginAsSFC,
-      SFCActions.selectFeeClerk,
-      SFCActions.processPayment,
-      SFCActions.SFCViewPayment,
-      SFCActions.SFCSubmitPayment,
-      BARLogout.Logout
-    )
-
-
-  val DMSCN = scenario("DM User Journey")
-    .exec(
-      BARLogout.Logout,
-      LandingBARLoginPage.barLoginPage,
-      SubmitLogin.loginAsDM,
-      DMActions.selectSeniorFeeClerk,
-      DMActions.DMProcessPayment,
-      DMActions.DMViewPayment,
-      DMActions.DMubmitPayment,
-      DMPaymentList.DMNavigateToPaymentList,
-      DMTransferToBAR.transferToBAR,
-      BARLogout.Logout
-    )
-
-
-  setUp(SCN.inject(rampUsers(1) during (1 minutes)),
-    SFCSCN.inject(rampUsers(1) during (1 minutes)),
-    DMSCN.inject(rampUsers(1) during (1 minutes))
+  setUp(SCN.inject(rampUsers(1) during (1 minutes))
       ).protocols(httpProtocol)
     .maxDuration(10 minute)
 
