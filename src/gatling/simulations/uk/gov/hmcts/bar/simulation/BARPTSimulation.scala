@@ -9,7 +9,11 @@ class BARPTSimulation extends Simulation
   val BashURL = Environment.baseURL
   val httpProtocol = http
     .baseUrl(BashURL)
+<<<<<<< HEAD
   //  .proxy(Proxy("proxyout.reform.hmcts.net", 8080))
+=======
+    .proxy(Proxy("proxyout.reform.hmcts.net", 8080))
+>>>>>>> 97c39d32b66177134d78084e6062aefc4e243e19
   val SCN = scenario("User Journey")
     .exec(
       BARLogout.Logout,
@@ -50,6 +54,25 @@ class BARPTSimulation extends Simulation
       BARLogout.Logout
     )
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  /*
+  setUp(SCN.inject(rampUsers(1) during (1 minutes))
+    SFCSCN.inject(rampUsers(315) during (60 minutes)),
+    DMSCN.inject(rampUsers(300) during (60 minutes))
+  ).protocols(httpProtocol)
+  .maxDuration(65 minute)
+
+  setUp(SCN.inject(splitUsers(300) into (rampUsers(150) over (180)) separatedBy (0)),
+   SFCSCN.inject(splitUsers(315) into (rampUsers(45) over (514)) separatedBy (0)),
+   DMSCN.inject(splitUsers(300) into (rampUsers(15) over (180)) separatedBy (0))
+  ).protocols(httpProtocol)
+    .maxDuration(10 minute)*/
+
+>>>>>>> 07fe62adff048f5167f6f9349a68571614edf106
+>>>>>>> 97c39d32b66177134d78084e6062aefc4e243e19
   setUp(SCN.inject(rampUsers(300) during (15 minutes)),
     SFCSCN.inject(nothingFor(20 minutes), rampUsers(315) during (15 minutes)),
     DMSCN.inject(nothingFor(40 minutes), rampUsers(300) during (15 minutes))
