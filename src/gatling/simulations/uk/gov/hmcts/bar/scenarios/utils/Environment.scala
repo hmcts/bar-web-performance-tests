@@ -7,11 +7,16 @@ import io.gatling.http.Predef._
 
 object Environment {
 
-  val idamURL = "https://idam-web-public.aat.platform.hmcts.net/login"
-  val baseURL = "https://bar-web-aat.service.core-compute-aat.internal"
+  //Test Enviornment
+  //val idamURL = "https://idam-web-public.aat.platform.hmcts.net/login"
+  //val baseURL = "https://bar-web-aat.service.core-compute-aat.internal"
 
-  val minThinkTime = 6
-  val maxThinkTime = 10
+  //PerfTest enviornment
+  val idamURL = "https://idam-web-public.perftest.platform.hmcts.net/login"
+  val baseURL = "https://bar-web-perftest.service.core-compute-perftest.internal"
+
+  val minThinkTime = 8
+  val maxThinkTime = 12
   val constantthinkTime = 1
   val minWaitForNextIteration = 1
   val maxWaitForNextIteration = 2
