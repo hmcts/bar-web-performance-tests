@@ -64,9 +64,9 @@ class BARPTSimulation extends Simulation
   ).protocols(httpProtocol)
     .maxDuration(10 minute)*/
 
-  setUp(SCN.inject(rampUsers(300) during (15 minutes)),
-    SFCSCN.inject(nothingFor(20 minutes), rampUsers(315) during (15 minutes)),
-    DMSCN.inject(nothingFor(40 minutes), rampUsers(300) during (15 minutes))
+  setUp(SCN.inject(rampUsers(1) during (15 minutes)),
+    SFCSCN.inject(nothingFor(20 minutes), rampUsers(1) during (15 minutes)),
+    DMSCN.inject(nothingFor(40 minutes), rampUsers(1) during (15 minutes))
   ) .protocols(httpProtocol)
     .maxDuration(65 minute)
 }
