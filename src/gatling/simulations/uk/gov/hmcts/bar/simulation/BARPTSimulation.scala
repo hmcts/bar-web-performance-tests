@@ -52,7 +52,7 @@ class BARPTSimulation extends Simulation
     LoginScenario.Logout
   )
 
-  setUp(BARScenario.inject(rampUsers(1) during (5 minutes)))
+  setUp(BARScenario.inject(rampUsers(10) during (5 minutes)))
     .protocols(httpProtocol)
     .assertions(global.successfulRequests.percent.is(100))
 

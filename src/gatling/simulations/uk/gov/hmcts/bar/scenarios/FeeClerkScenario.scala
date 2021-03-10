@@ -422,7 +422,7 @@ object FeeClerkScenario extends Simulation {
 		exec(http("BAR${service}_040_010_Features")
 			.get("/api/features")
 			.headers(fee_clerk_headers_62)
-			.check(jsonPath("$..enable").is("false"))
+			.check(jsonPath("$..enable").is("true"))
 			.check(status in(200, 304)))
 
 		.exec(http("BAR${service}_040_020_PaymentInstructions1")

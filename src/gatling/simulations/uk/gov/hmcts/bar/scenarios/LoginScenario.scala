@@ -729,13 +729,13 @@ object LoginScenario {
     .exec(http("BAR${service}_020_060_PaymentInstructions3")
       .get("/api/payment-instructions/count?status=A")
       .headers(DM_clerk_headers_32)
-      .check(jsonPath("$..data").find(0).saveAs("userId2"))
       .check(jsonPath("$..success").is("true"))
       .check(status in(200, 304)))
 
     .exec(http("BAR${service}_020_070_Users3")
       .get("/api/users/pi-stats?status=A")
       .headers(DM_clerk_headers_34)
+      .check(jsonPath("$..bar_user_id").find(0).saveAs("userId2"))
       .check(jsonPath("$..success").is("true"))
       .check(status in(200, 304)))
 

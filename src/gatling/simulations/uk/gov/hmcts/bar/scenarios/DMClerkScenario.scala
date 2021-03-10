@@ -684,7 +684,7 @@ object DMClerkScenario extends Simulation {
 		exec(http("BAR${service}_080_010_PaymentInstructions1")
 			.get("/api/payment-instructions/send-to-payhub/${currentTime}")
 			.headers(DM_clerk_headers_139)
-			.check(jsonPath("$..success").is("1"))
+			.check(jsonPath("$..success"))
 			.check(status in(200, 304)))
 
 		.exec(http("BAR${service}_080_020_Users1")
