@@ -18,7 +18,7 @@ class BARPTSimulation extends Simulation
     .baseUrl(BaseURL)
     .inferHtmlResources()
     .silentResources
-    .proxy(Proxy("proxyout.reform.hmcts.net", 8080))
+    //.proxy(Proxy("proxyout.reform.hmcts.net", 8080))
 
   val BARScenario = scenario("BAR Scenario")
 
