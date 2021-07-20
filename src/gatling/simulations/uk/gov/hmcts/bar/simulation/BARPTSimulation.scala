@@ -54,6 +54,7 @@ class BARPTSimulation extends Simulation
 
   setUp(BARScenario.inject(rampUsers(10) during (5 minutes)))
     .protocols(httpProtocol)
-    .assertions(global.successfulRequests.percent.is(100))
+    .assertions(global.successfulRequests.percent.gte(95))
+    .assertions(forAll.successfulRequests.percent.gte(90))
 
 }
